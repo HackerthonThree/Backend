@@ -1,4 +1,3 @@
-# Backend
 # RequestDto 설명
 ------------------------------
 ***CommentSaveRequestDto***
