@@ -28,8 +28,9 @@ public class StockClosingPrice {
     private LocalDateTime date;
 
     @Builder
-    public StockClosingPrice(Stock stock, Long endCost) {
+    public StockClosingPrice(Stock stock, Long endCost, LocalDateTime date) {
         this.stock = stock;
         this.endCost = endCost;
+        this.date = date;
     }
 }

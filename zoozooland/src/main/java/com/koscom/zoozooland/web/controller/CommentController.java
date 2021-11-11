@@ -17,10 +17,16 @@ public class CommentController {
 
     private final CommentService commentService;
 
-    // 종목별 댓글 불러오기
+    // 종목별 댓글 수익금 순으로 불러오기
     @GetMapping("/{code}")
     public List<CommentListResponseDto> getStockCommentAll(@PathVariable Long code) {
         return commentService.getStockCommentAll(code);
+    }
+
+    // 주주인지 체크
+    @GetMapping("/transaction")
+    public boolean isZoozoo(@RequestParam Long userId,@RequestParam Long stockCode) {
+        return commentService.isZoozoo(userId, stockCode);
     }
 
     // 댓글 입력
