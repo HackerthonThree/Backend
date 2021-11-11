@@ -84,6 +84,12 @@ public class CommentController {
     public List<TransactionListResponseDto> getTransactionList(@PathVariable Long commentId) {
         return commentService.getTransactionList(commentId);
     }
+    
+    // 댓글 매수 매도 내역
+    @GetMapping("/transaction/{commentId}")
+    public List<TransactionListResponseDto> getTransactionList(@PathVariable Long commentId) {
+        return commentService.getTransactionList(commentId);
+    }
 
     // 종목 전체 조회
     @GetMapping("/stock")
