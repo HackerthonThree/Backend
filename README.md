@@ -110,7 +110,7 @@ public class CommentController {
 {
     "content" : "내용",
     "nickname" : "닉네임",
-    "stockName" : "종목이름"
+    "stockCode" : "종목"
 }
 ```
 
