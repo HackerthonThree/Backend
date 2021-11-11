@@ -1,6 +1,6 @@
 # Backend
 
-##포트폴리오 서비스 - base url : 3.35.205.126:8080/api/v1/portfolio/
+#포트폴리오 서비스 - base url : 3.35.205.126:8080/api/v1/portfolio/
 
 1. 종목별 종가 데이터 조회
     @GetMapping("/stock/price/{stockCode}")
