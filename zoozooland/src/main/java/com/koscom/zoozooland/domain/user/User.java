@@ -26,10 +26,18 @@ public class User {
     @Column
     private String accountNumber;
 
+    @Column
+    private String id;
+
+    @Column
+    private String password;
+
     @Builder
-    public User(String nickname, String brokerage, String accountNumber) {
+    public User(String nickname, String brokerage, String accountNumber, String id, String password) {
         this.nickname = nickname;
         this.brokerage = brokerage;
         this.accountNumber = accountNumber;
+        this.id = id;
+        this.password = password;
     }
 }

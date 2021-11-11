@@ -4,13 +4,11 @@ import com.koscom.zoozooland.domain.account.transaction.Transaction;
 import com.koscom.zoozooland.domain.account.transaction.TransactionRepository;
 import com.koscom.zoozooland.domain.comment.Comment;
 import com.koscom.zoozooland.domain.comment.CommentRepository;
+import com.koscom.zoozooland.domain.stock.Stock;
 import com.koscom.zoozooland.domain.stock.StockRepository;
 import com.koscom.zoozooland.domain.user.User;
 import com.koscom.zoozooland.domain.user.UserRepository;
-import com.koscom.zoozooland.web.dto.CommentListResponseDto;
-import com.koscom.zoozooland.web.dto.CommentSaveRequestDto;
-import com.koscom.zoozooland.web.dto.StockListResponseDto;
-import com.koscom.zoozooland.web.dto.TransactionListResponseDto;
+import com.koscom.zoozooland.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,7 +35,6 @@ public class CommentService {
     // 댓글 입력
     @Transactional
     public Long saveComment(CommentSaveRequestDto requestDto) {
-        // System.out.println(requestDto.toString());
         return commentRepository.save(requestDto.toEntity(userRepository.findByNickname(requestDto.getNickname()), stockRepository.findByStockName(requestDto.getStockName()))).getCommentId();
     }
 
@@ -75,6 +72,12 @@ public class CommentService {
         return stockRepository.findAll().stream()
                 .map(StockListResponseDto::new)
                 .collect(Collectors.toList());
+    }
+
+    // 종목 검색
+    @Transactional
+    public StockDto searchStock(String stockName) {
+        return new StockDto(stockRepository.findByStockName(stockName));
     }
 
     // 수익금액 계산

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WepConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/http://3.36.96.83:3000/**")
+        registry.addMapping("/**")
                 .allowedMethods("*");
     }
 }

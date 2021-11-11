@@ -1,10 +1,7 @@
 package com.koscom.zoozooland.web.controller;
 
 import com.koscom.zoozooland.service.CommentService;
-import com.koscom.zoozooland.web.dto.CommentListResponseDto;
-import com.koscom.zoozooland.web.dto.CommentSaveRequestDto;
-import com.koscom.zoozooland.web.dto.StockListResponseDto;
-import com.koscom.zoozooland.web.dto.TransactionListResponseDto;
+import com.koscom.zoozooland.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,5 +42,11 @@ public class CommentController {
     @GetMapping("/stock")
     public List<StockListResponseDto> getStockAll() {
         return commentService.getStockAll();
+    }
+
+    // 종목 검색
+    @GetMapping("/stock/search")
+    public StockDto searchStock(@RequestParam String stockName) {
+        return commentService.searchStock(stockName);
     }
 }
