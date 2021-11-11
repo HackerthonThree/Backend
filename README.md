@@ -108,8 +108,8 @@ public class CommentController {
 ***CommentSaveRequestDto***
 ```
 {
-    "content" : "아이디",
-    "nickname" : "비밀번호",
+    "content" : "내용",
+    "nickname" : "닉네임",
     "stockName" : "종목이름"
 }
 ```
