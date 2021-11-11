@@ -1,6 +1,7 @@
 package com.koscom.zoozooland.domain.account;
 
 import com.koscom.zoozooland.domain.user.User;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,4 +25,11 @@ public class Account {
 
     @Column
     private Long qty;
+
+    @Builder
+    public Account(User user, String stockName, Long qty) {
+        this.user = user;
+        this.stockName = stockName;
+        this.qty = qty;
+    }
 }

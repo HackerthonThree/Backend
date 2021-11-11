@@ -1,6 +1,7 @@
 package com.koscom.zoozooland.web.controller;
 
 import com.koscom.zoozooland.service.PortfolioService;
+import com.koscom.zoozooland.web.dto.AccountResponseDto;
 import com.koscom.zoozooland.web.dto.StockClosingPriceListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,5 +22,11 @@ public class PortfolioController {
     @GetMapping("/stock/price/{stockCode}")
     public List<StockClosingPriceListResponseDto> getStockPrice(@PathVariable Long stockCode) {
         return portfolioService.getStockPrice(stockCode);
+    }
+
+    // 개인별 계좌 조회
+    @GetMapping("/account/{userId}")
+    public List<AccountResponseDto> getAccount(@PathVariable Long userId) {
+        return portfolioService.getAccount(userId);
     }
 }

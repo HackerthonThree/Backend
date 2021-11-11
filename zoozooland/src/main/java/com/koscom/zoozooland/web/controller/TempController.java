@@ -6,6 +6,8 @@
 
 //package com.koscom.zoozooland.web.controller;
 //
+//import com.koscom.zoozooland.domain.account.Account;
+//import com.koscom.zoozooland.domain.account.AccountRepository;
 //import com.koscom.zoozooland.domain.account.transaction.Transaction;
 //import com.koscom.zoozooland.domain.account.transaction.TransactionRepository;
 //import com.koscom.zoozooland.domain.comment.Comment;
@@ -31,6 +33,7 @@
 //    private final UserRepository userRepository;
 //    private final TransactionRepository transactionRepository;
 //    private final CommentRepository commentRepository;
+//    private final AccountRepository accountRepository;
 //
 //    @GetMapping("/")
 //    public StockClosingPrice temp() {
@@ -74,6 +77,42 @@
 //        userRepository.save(user1);
 //        userRepository.save(user2);
 //        userRepository.save(user3);
+//
+//        Account account1 = Account.builder()
+//                .user(user1)
+//                .qty(30L)
+//                .stockName("삼성전자")
+//                .build();
+//
+//        Account account2 = Account.builder()
+//                .user(user1)
+//                .qty(25L)
+//                .stockName("삼성SDS")
+//                .build();
+//
+//        Account account3 = Account.builder()
+//                .user(user2)
+//                .qty(50L)
+//                .stockName("삼성전자")
+//                .build();
+//
+//        Account account4 = Account.builder()
+//                .user(user2)
+//                .qty(10L)
+//                .stockName("쎄미시스코")
+//                .build();
+//
+//        Account account5 = Account.builder()
+//                .user(user3)
+//                .qty(100L)
+//                .stockName("삼성전자")
+//                .build();
+//
+//        accountRepository.save(account1);
+//        accountRepository.save(account2);
+//        accountRepository.save(account3);
+//        accountRepository.save(account4);
+//        accountRepository.save(account5);
 //
 //        transactionRepository.save(Transaction.builder()
 //                        .amount(30000L)
@@ -149,4 +188,5 @@
 ////        System.out.println(userRepository.findById(1L).toString());
 ////        return userRepository.findById(Long.parseLong(id)).get();
 ////    }
+////
 //}

@@ -26,7 +26,7 @@ public class AuthController {
     }
 
     // 로그인
-    @GetMapping("/login")
+    @PostMapping("/login")
     public Long login(@RequestBody LoginRequestDto requestDto) {
         return authService.login(requestDto);
     }
