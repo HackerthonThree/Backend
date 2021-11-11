@@ -13,7 +13,7 @@
 ```
 {
     "id" : "아이디",
-    "password" : "비밀번호
+    "password" : "비밀번호"
 }
 ```
 
@@ -24,6 +24,6 @@
     "brokerage" : "증권사",
     "accountNumber" : "계좌번호",
     "id" : "아이디",
-    "password" : "비번"
+    "password" : "비밀번"
 }
 ```
